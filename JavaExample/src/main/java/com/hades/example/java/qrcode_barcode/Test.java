@@ -11,13 +11,24 @@ public class Test {
 
     public static void main(String[] args) {
 //        generateQRCodeImage();
+        generateQRCodeImage2();
 //        generateQRCodeByte();
-        readQRCode();
+//        readQRCode();
     }
 
     private static void generateQRCodeImage() {
         try {
             QRCodeUtil.generateQRCodeImage("QR Code Example 苹果梨hellopgfh@123.com", 350, 350, QR_CODE_IMAGE_PATH);
+        } catch (WriterException e) {
+            System.out.println("Could not generate QR Code, WriterException :: " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("Could not generate QR Code, IOException :: " + e.getMessage());
+        }
+    }
+
+    private static void generateQRCodeImage2() {
+        try {
+            QRCodeUtil.generateQRCodeImage2("QR Code Example 苹果梨hellopgfh@123.com", 350, 350, QR_CODE_IMAGE_PATH);
         } catch (WriterException e) {
             System.out.println("Could not generate QR Code, WriterException :: " + e.getMessage());
         } catch (IOException e) {
